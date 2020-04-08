@@ -21,5 +21,21 @@ public class Main {
         System.out.println(ericsCheckingAccount.toString());
         System.out.println(markSavingsAccount.toString());
         System.out.println(aprilsAccount.toString());
+
+        if (ericsCheckingAccount.getBalance() > markSavingsAccount.getBalance()) {
+            System.out.println("Eric's account is larger");
+        } else if (ericsCheckingAccount.getBalance() < markSavingsAccount.getBalance()) {
+            System.out.println("Mark's account is larger");
+        } else {
+            System.out.println("The accounts are the same.");
+        }
+
+        System.out.printf(aprilsAccount.getOwner() + "'s account has a balance of $%,.2f\n",
+                aprilsAccount.getBalance());
+
+        markSavingsAccount.Transfer(10000.00f, ericsCheckingAccount);
+
+        System.out.println(ericsCheckingAccount.toString());
+        System.out.println(markSavingsAccount.toString());
     }
 }

@@ -56,4 +56,16 @@ public class BankAccount {
         return this.balance;
     }
 
+    public boolean Transfer(float amt, BankAccount toTransferTo) {
+        if (amt < this.getBalance()) {
+            this.Withdrawl(amt);
+            toTransferTo.Deposit(amt);
+            System.out.println("Transferring " + amt + " from " + this.getOwner()
+             + "'s account to " + toTransferTo.getOwner() + "'s account.\n");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
