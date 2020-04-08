@@ -60,6 +60,8 @@ public class BankAccount {
         if (amt < this.getBalance()) {
             this.Withdrawl(amt);
             toTransferTo.Deposit(amt);
+//            this.balance -= amt;
+//            toTransferTo.balance += amt;
             System.out.println("Transferring " + amt + " from " + this.getOwner()
              + "'s account to " + toTransferTo.getOwner() + "'s account.\n");
             return true;

@@ -33,7 +33,12 @@ public class Main {
         System.out.printf(aprilsAccount.getOwner() + "'s account has a balance of $%,.2f\n",
                 aprilsAccount.getBalance());
 
-        markSavingsAccount.Transfer(10000.00f, ericsCheckingAccount);
+        boolean successfulTransfer = false;
+        if (markSavingsAccount.Transfer(10000.00f, ericsCheckingAccount)) {
+            System.out.println("successful transfer\n");
+        } else {
+            System.out.println("unsuccessful transfer\n");
+        }
 
         System.out.println(ericsCheckingAccount.toString());
         System.out.println(markSavingsAccount.toString());
